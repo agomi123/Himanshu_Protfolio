@@ -1,4 +1,28 @@
 $(document).ready(function(){
+    
+    function sendEmail(){
+        var name =$('#name').val();
+        var email =$('#email').val();
+        var subject =$('#subject').val();
+        var message =$('#message').val();
+        var body = 'Name: '+name+'<br>Email: '+email+'<br>Subject: '+subject+'<br>message: '+message;
+       
+    }
+    Email.send({
+        SecureToken: "ce05a918-43af-45d8-aee0-4b58387e67c2",
+    To : 'himanshugupta3385@gmail.com',
+    From : "smtp.elasticemail.com",
+    Subject : "This is the subject From: "+name,
+    Body : body
+}).then(
+  message =>{
+      if(message=='OK')
+      alert('EMail sent');
+      else
+      alert('Failed');
+  }
+);
+
     $(window).scroll(function(){
         // sticky navbar on scroll script
         if(this.scrollY > 20){
@@ -15,6 +39,15 @@ $(document).ready(function(){
         }
     });
 
+    let btn=document.querySelector(".resumed");
+    btn.addEventListener("click",()=>{
+        const span=document.querySelector("a span");
+        span.style.visibility="visible";
+        setTimeout(()=>{
+            span.style.visibility="hidden";
+            btn.style.transition="1s ease-in-out";
+        },3000);
+    })
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
@@ -34,7 +67,7 @@ $(document).ready(function(){
     });
 
     // typing text animation script
-    var typed = new Typed(".typing", {
+    var typed = new Typed(".typing2", {
         strings: ["Developer",  "Designer", "Programmer","Learner","Adviser"],
         typeSpeed: 100,
         backSpeed: 60,
@@ -42,7 +75,7 @@ $(document).ready(function(){
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Developer",  "Designer", "Programmer","Learner","Adviser"],
+        strings: [ "Developer", "Designer", "Programmer","Learner", "Adviser"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -70,4 +103,5 @@ $(document).ready(function(){
             }
         }
     });
+    
 });
