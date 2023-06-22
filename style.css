@@ -101,7 +101,7 @@ section .title::after{
 #moreText {
       
     /* Display nothing for the element */
-    display: none;
+    /* display: none; */
 }
 #textButton{
     /* color: #fff; */
@@ -188,10 +188,11 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner1.png") no-repeat center;
+    background: url("images/as.jpg") no-repeat center;
     height: 100vh;
-    color: #fff;
+    color:crimson;
     min-height: 500px;
+    /* background-color: #070707; */
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
@@ -207,9 +208,10 @@ section .title::after{
     font-size: 27px;
 }
 .home .home-content .text-2{
-    font-size: 75px;
-    font-weight: 600;
+    font-size: 35px;
+    font-weight: 300;
     margin-left: -3px;
+    font-family: 'Ubuntu', sans-serif;
 }
 .home .home-content .text-3{
     font-size: 40px;
